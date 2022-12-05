@@ -7,10 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-
 @SpringBootApplication
 public class PopcatClickerApplication implements CommandLineRunner {
-
 	@Autowired
 	private ApplicationContext appContext;
 
@@ -20,10 +18,7 @@ public class PopcatClickerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-
 		ClickerService controller = (ClickerService) appContext.getBean("ClickerService");
 		controller.spamClick();
-
 	}
-
 }
