@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverLogLevel;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,29 +24,13 @@ import java.util.logging.Level;
 public class ClickerService {
 
 
-    private final ChromeDriver driver;
+    private final RemoteWebDriver driver;
     private static long totalClicks = 0;
     private static long startTime = 0;
 
 
-    /*public static void main(String[] args) {
-
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anwender\\drivers\\chromedriver.exe");
-        final ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
-        options.addArguments("window-size=1920,1080");
-        options.setLogLevel(ChromeDriverLogLevel.OFF);
-        ChromeDriver d = new ChromeDriver(options);
-
-        d.setLogLevel(Level.OFF);
-
-        ClickerService s = new ClickerService(d);
-
-        s.spamClick();
-    }*/
-
     @Autowired
-    public ClickerService(ChromeDriver driver){
+    public ClickerService(ChromeDriver driver) {
         this.driver = driver;
     }
 

@@ -67,6 +67,7 @@ jar {
 			exclude 'META-INF/maven/io.netty/netty-transport-native-epoll/*'
 			exclude 'META-INF/maven/io.netty/netty-transport-native-kqueue/*'
 			exclude 'META-INF/maven/org.jctools/jctools-core/*'
+			exclude 'mozilla/*'
 
 			it.isDirectory() ? it : zipTree(it)
 		}
