@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriverLogLevel;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -18,15 +19,15 @@ import java.util.List;
 import java.util.logging.Level;
 
 @Service("ClickerService")
-@AllArgsConstructor
 public class ClickerService {
 
+
     private final ChromeDriver driver;
-    private static long totalClicks;
-    private static long startTime;
+    private static long totalClicks = 0;
+    private static long startTime = 0;
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anwender\\drivers\\chromedriver.exe");
         final ChromeOptions options = new ChromeOptions();
@@ -40,8 +41,12 @@ public class ClickerService {
         ClickerService s = new ClickerService(d);
 
         s.spamClick();
-    }
+    }*/
 
+    @Autowired
+    public ClickerService(ChromeDriver driver){
+        this.driver = driver;
+    }
 
     @SneakyThrows
     public void spamClick() {

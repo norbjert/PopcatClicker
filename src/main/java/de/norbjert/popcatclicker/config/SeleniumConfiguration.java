@@ -1,6 +1,7 @@
 package de.norbjert.popcatclicker.config;
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import jakarta.annotation.PostConstruct;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +16,7 @@ public class SeleniumConfiguration {
     @PostConstruct
     void postConstruct(){
 
-        if(System.getProperty("os.name").toLowerCase().contains("win")){
+        /*if(System.getProperty("os.name").toLowerCase().contains("win")){
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anwender\\drivers\\chromedriver.exe");
         }
         else if(System.getProperty("os.name").toLowerCase().contains("linux")){
@@ -24,11 +25,14 @@ public class SeleniumConfiguration {
         else{
             //Logging.getLogger().log(Level.SEVERE, "YOUR OS IS NOT SUPPORTED");
             System.exit(-1);
-        }
+        }*/
     }
 
     @Bean
     public ChromeDriver driver(){
+
+        WebDriverManager.chromedriver().setup();
+
         final ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("window-size=1920,1080");

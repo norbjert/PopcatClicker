@@ -20,7 +20,7 @@ public class ClickerServiceFirefox {
     private static long totalClicks;
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         WebDriverManager.firefoxdriver().setup();
 
@@ -39,7 +39,7 @@ public class ClickerServiceFirefox {
 
         s.spamClick();
 
-    }
+    }*/
 
 
     public void spamClick() {

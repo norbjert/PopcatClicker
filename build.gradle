@@ -25,6 +25,7 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-gradle-plugin:3.0.0'
 
 	implementation 'org.assertj:assertj-core:3.23.1'
 
@@ -44,7 +45,7 @@ dependencies {
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+	//useJUnitPlatform()
 }
 
 jar {
@@ -55,13 +56,17 @@ jar {
 	}
 	from {
 		configurations.runtimeClasspath.collect {
-			exclude 'META-INF/LICENSE.txt'
-			exclude 'META-INF/NOTICE.txt'
-			exclude 'META-INF/LICENSE'
-			exclude 'META-INF/NOTICE'
-			exclude 'META-INF/DEPENDENCIES'
+
 			exclude 'module-info.class'
 			exclude 'META-INF/versions/9/module-info.class'
+			exclude 'META-INF/*'
+			exclude 'META-INF/spring/*'
+			exclude 'META-INF/services/*'
+			exclude 'org/apache/commons/logging/'
+			exclude 'org/apache/commons/logging/impl/*'
+			exclude 'META-INF/maven/io.netty/netty-transport-native-epoll/*'
+			exclude 'META-INF/maven/io.netty/netty-transport-native-kqueue/*'
+			exclude 'META-INF/maven/org.jctools/jctools-core/*'
 
 			it.isDirectory() ? it : zipTree(it)
 		}
