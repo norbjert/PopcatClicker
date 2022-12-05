@@ -1,6 +1,6 @@
 # PopcatClicker
 
-automatic script for farming pops on popcat.click
+automatic script for farming pops on https://popcat.click
 
 prove I have too much time
 
@@ -10,4 +10,6 @@ can reach up to
 - 288,000 clicks per hour
 - 6.9 million clicks per day
 
-and I have yet to try to get it to run multithreaded 
+
+
+update: they ratelimit like theres no tomorrow, max ~50 clicks per minute per IP address, so consider this project a complete waste of time and resources.
