@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.logging.Level;
 
-@Service("ClickerService")
+@Deprecated
+//@Service("ClickerServiceFF")
 @AllArgsConstructor
 public class ClickerServiceFirefox {
 
@@ -52,7 +53,7 @@ public class ClickerServiceFirefox {
 
 
         int clickCounter = 0;
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             try {
                 element.click();
                 totalClicks++;

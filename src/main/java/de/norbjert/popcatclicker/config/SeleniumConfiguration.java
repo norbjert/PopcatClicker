@@ -1,7 +1,6 @@
 package de.norbjert.popcatclicker.config;
 
 
-import de.norbjert.popcatclicker.service.Logging;
 import jakarta.annotation.PostConstruct;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,17 +22,17 @@ public class SeleniumConfiguration {
             System.setProperty("webdriver.chrome.driver", "~/drivers/chromedriver");
         }
         else{
-            Logging.getLogger().log(Level.SEVERE, "YOUR OS IS NOT SUPPORTED");
+            //Logging.getLogger().log(Level.SEVERE, "YOUR OS IS NOT SUPPORTED");
             System.exit(-1);
         }
-
     }
 
     @Bean
     public ChromeDriver driver(){
         final ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
-        options.addArguments("window-size=900,1080");
+        options.addArguments("--headless");
+        options.addArguments("window-size=1920,1080");
+        options.addArguments("--mute-audio");
         return new ChromeDriver(options);
     }
 }

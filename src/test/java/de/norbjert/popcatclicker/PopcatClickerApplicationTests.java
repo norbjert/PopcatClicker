@@ -8,6 +8,7 @@ class PopcatClickerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//no
 	}
 
 }
